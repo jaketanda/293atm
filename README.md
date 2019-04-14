@@ -1,7 +1,11 @@
 # 293atm
+
 ATM Simulation
+
 Jake Tanda's ATM Project
+
 CSCI 293
+
 Spring 2019
 
 Possible logins:
@@ -30,5 +34,7 @@ NUM	PIN
 
 95841	3524
 
+
 Can view balance, past 5 transactions and their dates, and withdraw funds.
+
 All information is stored in accounts.xlsx
