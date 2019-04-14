@@ -64,6 +64,8 @@ namespace atmProject
         {
             double cardNum;
             double cardPin;
+            
+            // set card info while checking if valid input
             try
             {
                 cardNum = Convert.ToDouble(txtCardNum.Text);
@@ -145,6 +147,8 @@ namespace atmProject
             double amount = 0;
             
             lblWithdrawSuccess.Content = "";
+            
+            // check the amount and make sure it is valid
             try
             {
                 amount = Convert.ToDouble(txtWith.Text);
@@ -155,14 +159,16 @@ namespace atmProject
                 txtWith.Text = "";
                 return;
             }
-
+            
+            // no more than 5 withdrawals per login
             if (withdrawals >= 5)
             {
                 MessageBox.Show("Maximum of 5 withdrawals per login.");
                 txtWith.Text = "";
                 return;
             }
-
+    
+            // no more than $1000 per withdrawal
             if (amount > 1000)
             {
                 MessageBox.Show("Maximum of $1000.00 per withdrawal.");
@@ -170,6 +176,7 @@ namespace atmProject
                 return;
             }
 
+            // No negative withdrawals or 0
             if (amount <= 0)
             {
                 MessageBox.Show("Please enter a valid amount.");
